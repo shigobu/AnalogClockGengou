@@ -230,32 +230,45 @@ namespace アナログ時計だほっとけい
             g.FillEllipse(Brushes.White, centerX - 4, centerY - 4, 8, 8);
 
             //日付の描画
-            System.Drawing.Drawing2D.GraphicsPath gpYear = new System.Drawing.Drawing2D.GraphicsPath();
-            FontFamily ff = new FontFamily("Meiryo");
-            RectangleF yearbasyo = new RectangleF(0, pictureBox1.Height / 4, pictureBox1.Width, pictureBox1.Height / 4);
-            RectangleF datebasyo = new RectangleF(0, pictureBox1.Height / 2, pictureBox1.Width, pictureBox1.Height / 4);
-            StringFormat sf = new StringFormat();
-            //文字を真ん中に表示
-            sf.Alignment = StringAlignment.Center;
-            sf.LineAlignment = StringAlignment.Center;
-            //描画
-            System.Globalization.CultureInfo ci =new System.Globalization.CultureInfo("ja-JP", false);
-            ci.DateTimeFormat.Calendar = new System.Globalization.JapaneseCalendar();
-
-            string year = nowTime.ToString("gy年", ci);
-            string date = nowTime.ToString("M月d日(ddd)", ci);
             if(dateCheck)
             {
-                gpYear.AddString(year, ff, (int)FontStyle.Bold, pictureBox1.Height / 10, yearbasyo, sf);
-                gpYear.AddString(date, ff, (int)FontStyle.Bold, pictureBox1.Height / 10, datebasyo, sf);
+                Font fnt = new Font("Meiryo", pictureBox1.Height / 11);
+                RectangleF yearbasyo = new RectangleF(0, pictureBox1.Height / 4, pictureBox1.Width, pictureBox1.Height / 4);
+                RectangleF datebasyo = new RectangleF(0, pictureBox1.Height / 2, pictureBox1.Width, pictureBox1.Height / 4);
+                StringFormat sf = new StringFormat();
+                //文字を真ん中に表示
+                sf.Alignment = StringAlignment.Center;
+                sf.LineAlignment = StringAlignment.Center;
+
+                //文字列作成
+                System.Globalization.CultureInfo ci =new System.Globalization.CultureInfo("ja-JP", false);
+                ci.DateTimeFormat.Calendar = new System.Globalization.JapaneseCalendar();
+
+                string year = nowTime.ToString("gy年", ci);
+                string date = nowTime.ToString("M月d日(ddd)", ci);
+
+                //描画
+                //背景白枠
+                int[,] rectMargin = new int[,]{ { -1, -1},
+                                                {  1, -1},
+                                                {  1,  1},
+                                                { -1,  1}};
+                for (int i = 0; i < 4; i++)
+                {
+                    RectangleF yRect = new RectangleF(yearbasyo.X + rectMargin[i, 0], yearbasyo.Y + rectMargin[i, 1], yearbasyo.Width, yearbasyo.Height);
+                    RectangleF dRect = new RectangleF(datebasyo.X + rectMargin[i, 0], datebasyo.Y + rectMargin[i, 1], datebasyo.Width, datebasyo.Height);
+                    g.DrawString(year, fnt, Brushes.White, yRect, sf);
+                    g.DrawString(date, fnt, Brushes.White, dRect, sf);
+
+                }
+
+                //本体
+                g.DrawString(year, fnt, Brushes.Black, yearbasyo, sf);
+                g.DrawString(date, fnt, Brushes.Black, datebasyo, sf);
+
+                fnt.Dispose();
             }
 
-            //文字列の中を塗りつぶす
-            g.FillPath(Brushes.Black, gpYear);
-            //文字列の縁を描画する
-            g.DrawPath(Pens.White, gpYear);
-
-            ff.Dispose();
             g.Dispose();
 
             pictureBox1.Image = clock;
