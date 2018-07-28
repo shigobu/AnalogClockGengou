@@ -36,12 +36,12 @@
             this.背景透過ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.秒針ぬるぬるToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.分針ぬるぬるToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.日付表示ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.設定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.終了ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.日付表示ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -52,7 +52,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(300, 300);
+            this.pictureBox1.Size = new System.Drawing.Size(550, 525);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.SizeChanged += new System.EventHandler(this.pictureBox1_SizeChanged);
@@ -67,6 +67,7 @@
             // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(28, 28);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.背景透過ToolStripMenuItem,
             this.秒針ぬるぬるToolStripMenuItem,
@@ -77,53 +78,60 @@
             this.toolStripSeparator2,
             this.終了ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 170);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(209, 220);
             this.contextMenuStrip1.Opened += new System.EventHandler(this.contextMenuStrip1_Opened);
             // 
             // 背景透過ToolStripMenuItem
             // 
             this.背景透過ToolStripMenuItem.Name = "背景透過ToolStripMenuItem";
-            this.背景透過ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.背景透過ToolStripMenuItem.Size = new System.Drawing.Size(208, 34);
             this.背景透過ToolStripMenuItem.Text = "背景透過";
             this.背景透過ToolStripMenuItem.Click += new System.EventHandler(this.背景透過ToolStripMenuItem_Click);
             // 
             // 秒針ぬるぬるToolStripMenuItem
             // 
             this.秒針ぬるぬるToolStripMenuItem.Name = "秒針ぬるぬるToolStripMenuItem";
-            this.秒針ぬるぬるToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.秒針ぬるぬるToolStripMenuItem.Size = new System.Drawing.Size(208, 34);
             this.秒針ぬるぬるToolStripMenuItem.Text = "秒針ぬるぬる";
             this.秒針ぬるぬるToolStripMenuItem.Click += new System.EventHandler(this.秒針ぬるぬるToolStripMenuItem_Click);
             // 
             // 分針ぬるぬるToolStripMenuItem
             // 
             this.分針ぬるぬるToolStripMenuItem.Name = "分針ぬるぬるToolStripMenuItem";
-            this.分針ぬるぬるToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.分針ぬるぬるToolStripMenuItem.Size = new System.Drawing.Size(208, 34);
             this.分針ぬるぬるToolStripMenuItem.Text = "分針ぬるぬる";
             this.分針ぬるぬるToolStripMenuItem.Click += new System.EventHandler(this.分針ぬるぬるToolStripMenuItem_Click);
+            // 
+            // 日付表示ToolStripMenuItem
+            // 
+            this.日付表示ToolStripMenuItem.Name = "日付表示ToolStripMenuItem";
+            this.日付表示ToolStripMenuItem.Size = new System.Drawing.Size(208, 34);
+            this.日付表示ToolStripMenuItem.Text = "日付表示";
+            this.日付表示ToolStripMenuItem.Click += new System.EventHandler(this.日付表示ToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(205, 6);
             // 
             // 設定ToolStripMenuItem
             // 
             this.設定ToolStripMenuItem.CheckOnClick = true;
             this.設定ToolStripMenuItem.Name = "設定ToolStripMenuItem";
-            this.設定ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.設定ToolStripMenuItem.Size = new System.Drawing.Size(208, 34);
             this.設定ToolStripMenuItem.Text = "設定";
             this.設定ToolStripMenuItem.Click += new System.EventHandler(this.設定ToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(205, 6);
             // 
             // 終了ToolStripMenuItem
             // 
             this.終了ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("終了ToolStripMenuItem.Image")));
             this.終了ToolStripMenuItem.Name = "終了ToolStripMenuItem";
-            this.終了ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.終了ToolStripMenuItem.Size = new System.Drawing.Size(208, 34);
             this.終了ToolStripMenuItem.Text = "終了";
             this.終了ToolStripMenuItem.Click += new System.EventHandler(this.終了ToolStripMenuItem_Click);
             // 
@@ -135,22 +143,15 @@
             this.notifyIcon1.Visible = true;
             this.notifyIcon1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseClick);
             // 
-            // 日付表示ToolStripMenuItem
-            // 
-            this.日付表示ToolStripMenuItem.Name = "日付表示ToolStripMenuItem";
-            this.日付表示ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.日付表示ToolStripMenuItem.Text = "日付表示";
-            this.日付表示ToolStripMenuItem.Click += new System.EventHandler(this.日付表示ToolStripMenuItem_Click);
-            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(300, 300);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(550, 525);
             this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Name = "Form1";
             this.ShowInTaskbar = false;
             this.Text = "アナログ時計";
