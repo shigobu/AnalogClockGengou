@@ -43,6 +43,16 @@ namespace アナログ時計だほっとけい
             minHandCheckBox.Checked = ((Form1)this.Owner).minHandCheck;
             dateCheckBox.Checked = ((Form1)this.Owner).dateCheck;
 
+            //クロマキー
+            if (((Form1)this.Owner).TransparencyKey == Color.Empty)
+            {
+                ChromakeyCheckBox.Checked = true;
+            }
+            else
+            {
+                ChromakeyCheckBox.Checked = false;
+            }
+
         }
 
         private void tyouhoukei_ValueChanged(object sender, EventArgs e)
@@ -122,6 +132,18 @@ namespace アナログ時計だほっとけい
         private void dateCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             ((Form1)this.Owner).dateCheck = dateCheckBox.Checked;
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (((CheckBox)sender).Checked)
+            {
+                ((Form1)this.Owner).TransparencyKey = Color.Empty;
+            }
+            else
+            {
+                ((Form1)this.Owner).TransparencyKey = ((Form1)this.Owner).BackColor;
+            }
         }
     }
 }

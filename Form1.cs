@@ -21,9 +21,9 @@ namespace アナログ時計だほっとけい
         private void Form1_Load(object sender, EventArgs e)
         {
             //背景色を指定する
-            this.BackColor = Color.Green;
+            this.BackColor = Color.Lime;
             //透明を指定する
-            this.TransparencyKey = Color.Green;
+            this.TransparencyKey = BackColor;
             clock = new Bitmap(pictureBox1.Width, pictureBox1.Height);
             clock.MakeTransparent(TransparencyKey);
 
@@ -146,7 +146,7 @@ namespace アナログ時計だほっとけい
             SolidBrush clockBackColor;
             if (touka)
             {
-                clockBackColor = new SolidBrush(Color.Green);
+                clockBackColor = new SolidBrush(BackColor);
             }
             else
             {
