@@ -232,7 +232,7 @@ namespace アナログ時計だほっとけい
             //日付の描画
             if(dateCheck)
             {
-                Font fnt = new Font("Meiryo", pictureBox1.Height / 11);
+                Font fnt = new Font("UD Digi Kyokasho NK-R", pictureBox1.Height / 11);
                 RectangleF yearbasyo = new RectangleF(0, pictureBox1.Height / 4, pictureBox1.Width, pictureBox1.Height / 4);
                 RectangleF datebasyo = new RectangleF(0, pictureBox1.Height / 2, pictureBox1.Width, pictureBox1.Height / 4);
                 StringFormat sf = new StringFormat();
